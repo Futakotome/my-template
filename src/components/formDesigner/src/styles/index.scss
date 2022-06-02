@@ -1,0 +1,559 @@
+$primary-color: #247fea;
+$layout-color: #e6450f;
+$ghost-color: #389e0d;
+$primary-background-color: #ecf5ff;
+*,
+:after,
+:before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+// 顶部header区域
+.header {
+  background: #eaedf0;
+  padding: 0;
+  border-bottom: 1px solid #bfbfbf;
+  display: flex;
+  position: relative;
+  align-items: center;
+  .logo-container {
+    padding: 0 10px 0;
+    .logo {
+      width: 36px;
+      height: 36px;
+      display: inline-block;
+    }
+    .title {
+      font-size: 24px;
+      vertical-align: top;
+      margin-left: 10px;
+      font-weight: 500;
+      color: #595a5a;
+      line-height: 40px;
+      display: inline-block;
+    }
+  }
+  .device-bar {
+    left: 260px;
+    right: unset !important;
+    .device-btn {
+      padding: 10px;
+      &:hover {
+        color: #333 !important;
+      }
+      &.active {
+        background: transparent !important;
+        color: #2d88f8 !important;
+      }
+    }
+  }
+  .btn-bar {
+    position: absolute;
+    right: 0;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .button {
+      background: black;
+      margin-right: 5px;
+      background: none !important;
+      border: none !important;
+      color: #666 !important;
+      padding: 9px;
+      flex: 1;
+      i {
+        display: block;
+        font-size: 18px;
+        margin-bottom: 8px;
+      }
+      &:hover {
+        color: #333 !important;
+      }
+      &.active {
+        background: #2d88f8 !important;
+        color: #fff !important;
+      }
+    }
+  }
+}
+
+// 左侧布局组件
+.components-list {
+  padding: 8px 0;
+  width: 100%;
+  height: 100%;
+  .widget-cate {
+    padding: 8px 12px;
+    font-size: 13px;
+    font-weight: 700;
+    color: #2077ff;
+    text-align: left;
+  }
+  ul {
+    position: relative;
+    overflow: hidden;
+    padding: 0 10px 10px;
+    margin: 0;
+  }
+  .form-edit-widget-label {
+    font-size: 12px;
+    text-align: left;
+    display: block;
+    width: 48%;
+    line-height: 26px;
+    position: relative;
+    float: left;
+    left: 0;
+    // overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin: 1%;
+    color: #333;
+    border: 1px dashed #b9b9b9;
+    &:hover {
+      color: $primary-color;
+      border: 1px dashed $primary-color;
+    }
+
+    & > div {
+      display: block;
+      cursor: move;
+      // background: #f4f6fc;
+      border: 1px solid #f4f6fc;
+
+      .icon {
+        margin-right: 6px;
+        margin-left: 8px;
+        font-size: 14px;
+        display: inline-block;
+        vertical-align: middle;
+      }
+
+      span {
+        display: inline-block;
+        vertical-align: middle;
+      }
+    }
+  }
+}
+
+// 表单中间布局区域
+.center-container {
+  border-left: 1px solid #e0e0e0;
+  border-right: 1px solid #e0e0e0;
+  .el-main {
+    padding: 0;
+    position: relative;
+    background: #fafafa;
+  }
+  .widget-form-container {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    overflow: auto;
+    // border: 1px dashed #999;
+    box-shadow: 0 4px 12px #ebedf0;
+    &.pad,
+    &.mobile {
+      margin: auto;
+      background: #fafafa;
+      box-shadow: 0 4px 12px #ebedf0;
+      top: 10px;
+      left: 10px;
+      right: 10px;
+      bottom: 10px;
+    }
+    &.pad {
+      width: 770px;
+      border: 0;
+      border-radius: 5px;
+    }
+    &.mobile {
+      width: 375px;
+      border: 0;
+      border-radius: 12px;
+    }
+    .form-empty {
+      position: absolute;
+      text-align: center;
+      width: 300px;
+      font-size: 20px;
+      top: 24%;
+      left: 50%;
+      margin-left: -150px;
+      color: #aaa;
+      .form-empty-icon {
+        width: 16em;
+        height: 16em;
+      }
+    }
+    .widget-form {
+      height: 100%;
+    }
+    .widget-form-list {
+      background: #fff;
+      height: 100%;
+      padding-bottom: 20px;
+      overflow-x: hidden;
+
+      .widget-col-list {
+        min-height: 50px;
+        border: 1px dashed #ccc;
+        background: #fff;
+      }
+
+      .widget-view {
+        // padding-bottom: 18px;
+        padding: 5px;
+        overflow: hidden;
+        position: relative;
+        border: 1px dashed hsla(0, 0%, 66.7%, 0.7);
+        background-color: rgba(236, 245, 255, 0.3);
+        margin: 2px;
+        text-align: left;
+        cursor: pointer;
+        .el-form-item__content {
+          position: unset;
+          min-height: 28px;
+        }
+
+        &.is_req {
+          .el-form-item__label::before {
+            content: '*';
+            color: $ghost-color;
+            margin-right: 4px;
+          }
+        }
+
+        .widget-view-description {
+          height: 15px;
+          line-height: 15px;
+          font-size: 13px;
+          margin-top: 6px;
+          color: #909399;
+        }
+        .widget-view-model {
+          position: absolute;
+          top: -8px;
+          right: 3px;
+          font-size: 12px;
+          color: #67c23a;
+          z-index: 9;
+          font-weight: 500;
+        }
+        &:hover {
+          background: $primary-background-color;
+          outline: 1px solid $primary-color;
+          outline-offset: 0px;
+
+          &.active {
+            outline: 2px solid $primary-color;
+            border: 1px solid $primary-color;
+            outline-offset: 0;
+          }
+
+          .widget-view-drag {
+            display: block;
+          }
+        }
+
+        &.active {
+          outline: 2px solid $primary-color;
+          border: 1px solid $primary-color;
+        }
+      }
+
+      .widget-table {
+        padding: 0;
+        min-height: 90px;
+        background-color: rgba(253, 246, 236, 0.3);
+        position: relative;
+        display: flex;
+        .table-empty {
+          position: absolute;
+          text-align: center;
+          width: 300px;
+          height: 20px;
+          font-size: 16px;
+          top: 30px;
+          left: 50%;
+          margin-left: -150px;
+          color: rgba(0, 0, 0, 0.15);
+        }
+        .widget-fake-table {
+          width: 50px;
+          background: #f9f9f9;
+          border: 1px solid #eee;
+          text-align: center;
+          .header {
+            border-bottom: 1px solid rgb(193, 193, 193);
+            height: 35px;
+            line-height: 35px;
+          }
+          .content {
+            line-height: 65px;
+          }
+        }
+        .widget-view-model {
+          position: absolute;
+          top: 2px;
+          right: 3px;
+          font-size: 12px;
+          color: #67c23a;
+          z-index: 9;
+          font-weight: 500;
+        }
+        .widget-sub-form-list {
+          min-height: 90px;
+          min-width: 600px;
+          display: flex;
+          overflow: auto;
+          border: 1px dashed #ccc;
+          .ghost {
+            position: relative;
+            background: $ghost-color;
+            width: 5px;
+            height: 90px;
+            &::after {
+              background: $ghost-color;
+            }
+          }
+          .table-header {
+            background: white;
+            line-height: 35px;
+            margin: 0 2px;
+            box-sizing: border-box;
+            text-align: center;
+            border: 1px solid rgb(218, 218, 218);
+            height: 35px;
+          }
+          .table-content {
+            border: 1px solid rgb(193, 193, 193);
+          }
+        }
+
+        .widget-view-action.widget-col-action {
+          background: $layout-color;
+        }
+
+        .widget-view-drag.widget-col-drag {
+          background: $layout-color;
+        }
+
+        &::after {
+          display: none;
+        }
+      }
+
+      .widget-col {
+        padding-bottom: 0;
+        padding: 5px;
+        background-color: rgba(253, 246, 236, 0.3);
+
+        &.active {
+          outline: 1px solid $layout-color;
+          border: 1px solid $layout-color;
+        }
+
+        &:hover {
+          background: #fdf6ec;
+          outline: 1px solid $layout-color;
+          outline-offset: 0px;
+
+          &.active {
+            outline: 1px solid $layout-color;
+            border: 1px solid $layout-color;
+            outline-offset: 0;
+          }
+        }
+
+        .el-col {
+          min-height: 50px;
+        }
+
+        .widget-view-action.widget-col-action {
+          background: $layout-color;
+          i {
+            color: white !important;
+            &:hover {
+              color: #303030 !important;
+            }
+          }
+        }
+
+        .widget-view-drag.widget-col-drag {
+          background: $layout-color;
+        }
+
+        &::after {
+          display: none;
+        }
+      }
+      // 表格布局
+      .widget-grid-table-container {
+        padding: 5px;
+        margin: 2px;
+        min-height: 50px;
+        .widget-grid-table {
+          border: 1px solid #333;
+          width: 100%;
+          table-layout: fixed;
+          .widget-grid-table__td {
+            padding: 4px;
+            position: relative;
+            // border: 2px inset rgba(0, 0, 0, 0.1);
+            &.active {
+              outline: 2px solid #e6a23c;
+              border: 1px solid #e6a23c;
+              outline-offset: -1px;
+            }
+            &:hover {
+              outline: 2px solid #e6a23c;
+              border: 1px solid #e6a23c;
+              outline-offset: -1px;
+            }
+            .widget-td-setting {
+              position: absolute;
+              background: #009688;
+              right: 0;
+              bottom: 0;
+              height: 20px;
+              line-height: 20px;
+              z-index: 9;
+              i {
+                font-size: 14px;
+                border-radius: 50%;
+                color: white;
+                margin: 0 5px;
+                cursor: pointer;
+                &:hover {
+                  color: #f2f2f2;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .ghost {
+      background: $ghost-color;
+      border: 1px solid $ghost-color;
+      outline-width: 0;
+      height: 3px;
+      box-sizing: border-box;
+      font-size: 0;
+      content: '';
+      overflow: hidden;
+      padding: 0;
+      &::after {
+        background: $ghost-color;
+      }
+    }
+  }
+}
+
+// 表单右侧配置区域
+.widget-config-container {
+  position: relative;
+  overflow: hidden;
+  .el-header {
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .config-tab {
+    box-sizing: border-box;
+    height: 45px;
+    line-height: 45px;
+    flex: 1;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 500;
+    position: relative;
+    border-bottom: 1px solid #d8d8d8;
+    color: #666;
+    background-color: #f4f4f4;
+    &:first-child {
+      border-right: 1px solid #d8d8d8;
+    }
+    &.active {
+      background: none;
+      box-sizing: border-box;
+      border-top: 1px solid $primary-color;
+      border-bottom: none !important;
+    }
+    &:not(.active):hover {
+      border-color: #c4c6cf;
+      cursor: pointer;
+      color: #333;
+      background-color: #ebecf0;
+    }
+  }
+
+  .config-content {
+    padding: 10px;
+    overflow: auto;
+    height: calc(100% - 45px);
+    .el-form-item__label {
+      padding: 0;
+      font-weight: 500;
+    }
+    .el-form-item {
+      border-bottom: solid 1px #e1e1e1;
+      padding-bottom: 10px;
+      text-align: left;
+    }
+  }
+
+  ul {
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.widget-td-setting-divider {
+  margin: 5px auto !important;
+  width: 80%;
+}
+.widget-view-drag {
+  position: absolute;
+  left: -2px;
+  top: -2px;
+  bottom: -18px;
+  height: 28px;
+  font-size: 20px;
+  line-height: 28px;
+  background: $primary-color;
+  z-index: 9;
+  i {
+    color: #fff;
+    font-weight: 500;
+    margin: 0 5px;
+    cursor: move;
+  }
+}
+.widget-view-action {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  height: 20px;
+  line-height: 20px;
+  z-index: 9;
+  i {
+    font-size: 14px;
+    color: $primary-color;
+    margin: 0 5px;
+    cursor: pointer;
+    &:hover {
+      color: $ghost-color;
+    }
+  }
+}
