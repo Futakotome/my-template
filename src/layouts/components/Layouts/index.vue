@@ -7,9 +7,7 @@
         <navbar/>
         <tags-view/>
       </div>
-      <div>
-        <app-main/>
-      </div>
+      <app-main/>
     </div>
     <!--    <div class="main-container">-->
     <!--      <div>-->
