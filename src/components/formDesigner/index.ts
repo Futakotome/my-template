@@ -7,6 +7,7 @@ import WidgetLayout from './src/WidgetLayout.vue';
 import FormDesigner from './src/FormDesigner.vue';
 
 // 直接在入口处全局注册组件,避免递归嵌套引用报错
+// @ts-ignore
 Vue.component(WidgetFormItem.name, WidgetFormItem);
 Vue.component(WidgetLayout.name, WidgetLayout);
 Vue.component('ProFormItem', ProFormItem);

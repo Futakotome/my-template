@@ -2,14 +2,23 @@
   <div :class="classObj" class="app-wrapper">
     <div v-if="device==='mobile'&&sidebar.opened" class="drawer-bg" @click="handleClickOutside"/>
     <sidebar class="sidebar-container"/>
-    <div class="main-container">
-      <div>
+    <div :class="{'hasTagsView':true}" class="main-container">
+      <div :class="{'fixed-header':true}">
         <navbar/>
+        <tags-view/>
       </div>
-      <div style="overflow:scroll;height: calc(100vh - 50px);background-color:#f3f7fa;">
-         <app-main/>
+      <div>
+        <app-main/>
       </div>
     </div>
+    <!--    <div class="main-container">-->
+    <!--      <div>-->
+    <!--        <navbar/>-->
+    <!--      </div>-->
+    <!--      <div style="overflow:scroll;height: calc(100vh - 50px);background-color:#f3f7fa;">-->
+    <!--         <app-main/>-->
+    <!--      </div>-->
+    <!--    </div>-->
   </div>
 </template>
 
@@ -18,11 +27,12 @@ import Navbar from '../Navbar'
 import Sidebar from '../Sidebar'
 import AppMain from '../AppMain'
 import ResizeMixin from '../mixin/ResizeHandler'
+import TagsView from '../TagsView'
 
 export default {
   name: 'SubAppLayout',
   components: {
-    Navbar, Sidebar, AppMain
+    Navbar, Sidebar, AppMain, TagsView
   },
   mixins: [ResizeMixin],
   computed: {
@@ -90,9 +100,5 @@ export default {
 
 .mobile .fixed-header {
   width: 100%;
-}
-::-webkit-scrollbar {
-    width: 0px;
-    height: 0px;
 }
 </style>
