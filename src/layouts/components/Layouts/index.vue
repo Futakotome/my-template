@@ -9,14 +9,6 @@
       </div>
       <app-main/>
     </div>
-    <!--    <div class="main-container">-->
-    <!--      <div>-->
-    <!--        <navbar/>-->
-    <!--      </div>-->
-    <!--      <div style="overflow:scroll;height: calc(100vh - 50px);background-color:#f3f7fa;">-->
-    <!--         <app-main/>-->
-    <!--      </div>-->
-    <!--    </div>-->
   </div>
 </template>
 

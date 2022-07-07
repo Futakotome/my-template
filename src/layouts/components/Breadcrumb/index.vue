@@ -32,7 +32,7 @@ export default {
       let matched = this.$route.matched.filter(item => item.meta && item.meta.title)
       const first = matched[0]
       if (!this.isDashboard(first)) {
-        matched = [{path: '/dashboard',redirect: '/home', meta: {title: '5G应用安全破冰系统'}}].concat(matched)
+        matched = [{path: '/dashboard', redirect: '/home', meta: {title: '模板系统'}}].concat(matched)
       }
       this.levelList = matched.filter(item => item.meta && item.meta.title && item.meta.breadcrumb !== false)
     },
@@ -54,7 +54,7 @@ export default {
         this.$router.push(redirect)
         return
       }
-      
+
       this.$router.push(this.pathCompile(path))
     }
   }
